@@ -17,18 +17,10 @@ body {
   fill-opacity: 1 !important;
 } */
 
-#bargraph svg rect {
-  transition: 0.5s all;
-}
-#bargraph svg text {
+#bargraph svg rect, #bargraph svg text {
   transition: 0.5s all;
 }
 
-/* hide guides */
-#bargraph svg path {
-  display: none;
-}
+/* #bargraph svg g > rect {
 
-#bargraph svg g > rect {
-
-}
+} */

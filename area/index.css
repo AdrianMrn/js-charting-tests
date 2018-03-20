@@ -1,0 +1,38 @@
+body {
+  background-color: #fff;
+}
+
+#areagraph {
+  overflow:hidden;
+}
+
+#areagraph > svg {
+  border: 1px solid #000;
+  background-color: #EEE;
+}
+
+#areagraph > svg circle {
+  /* display: none; */
+}
+
+/* hide line on top of area */
+#areagraph svg path[fill="none"] {
+  /* display: none; */
+}
+
+#areagraph svg rect, #areagraph svg text {
+  transition: 0.5s all;
+}
+
+/* do the svg animation in js/jquery (eg calculate width) https://css-tricks.com/svg-line-animation-works/ */
+path {
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  animation: dash 2.5s ease-in forwards;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

@@ -2,11 +2,11 @@ $(function () {
     Morris.Donut({
         element: 'graph',
         data: [
-            { value: 70, label: 'foo', formatted: 'at least 70%' },
-            { value: 15, label: 'bar', formatted: 'approx. 15%' },
-            { value: 10, label: 'baz', formatted: 'approx. 10%' },
-            { value: 5, label: 'A really really long label', formatted: 'at most 5%' }
+            { value: 32214416, label: 'Andere watermaatschappijen', formatted: 'at least 70%' },
+            { value: 49586931, label: 'Industrie', formatted: 'approx. 15%' },
+            { value: 54970140, label: 'Residentieel', formatted: 'approx. 10%' },
         ],
-        formatter: function (x, data) { return data.formatted; }
+        formatter: function (x, data) { return data.value.toLocaleString() + " m³"; }
     });
 });
+
