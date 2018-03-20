@@ -1,0 +1,34 @@
+body {
+  background-color: #fff;
+} 
+
+#bargraph > svg {
+  border: 1px solid #000;
+  overflow: visible !important;
+  background-color: #D3D3D3;
+}
+
+/* #bargraph svg rect {
+  fill-opacity: 0.8 !important;
+  transition: 0.3s all;
+}
+
+#bargraph svg rect:hover {
+  fill-opacity: 1 !important;
+} */
+
+#bargraph svg rect {
+  transition: 0.5s all;
+}
+#bargraph svg text {
+  transition: 0.5s all;
+}
+
+/* hide guides */
+#bargraph svg path {
+  display: none;
+}
+
+#bargraph svg g > rect {
+
+}
