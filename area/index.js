@@ -34,6 +34,7 @@ $(function () {
     var areagraphSvg = $('#areagraph svg');
     var backgroundElems = [];
     var textElems = [];
+    
     for (var i = 0; i < circles.length; i++) {
         var circle = circles.eq(i);
 

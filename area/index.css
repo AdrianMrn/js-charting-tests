@@ -3,13 +3,17 @@ body {
 }
 
 #areagraph {
-  overflow:hidden;
+  /* overflow:hidden; */
 }
 
 #areagraph > svg {
   border: 1px solid #000;
   background-color: #EEE;
+
+  transition: 0.3s all;
 }
+
+
 
 #areagraph > svg circle {
   /* display: none; */
@@ -24,7 +28,8 @@ body {
   transition: 0.5s all;
 }
 
-/* do the svg animation in js/jquery (eg calculate width) https://css-tricks.com/svg-line-animation-works/ */
+/* do the svg animation in js/jquery (eg calculate width)
+    https://css-tricks.com/svg-line-animation-works/ */
 path {
   stroke-dasharray: 1200;
   stroke-dashoffset: 1200;
