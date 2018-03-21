@@ -9,16 +9,21 @@ $(function () {
     { x: '2017', value: 200 },
   ];
 
+  var highestNum = 0;
+  for (i in barData) {
+    if (barData[i].value > highestNum) { highestNum = barData[i].value }
+  }
+
   var mBar = Morris.Bar({
     element: 'bargraph',
     axes: false,
     grid: false,
     data: barData,
     xkey: 'x',
-    ymax: 600,
+    ymax: (highestNum*1.5),
     ykeys: ['value'],
     labels: ['Y'],
-    barColors: ['#33C8AA'],
+    barColors: ['#573F92'],
     barSizeRatio: 0.99,
     barOpacity: 1,
     /* resize: true, */
@@ -108,19 +113,21 @@ $(function () {
     var txtElem = document.createElementNS("http://www.w3.org/2000/svg", "text");
     var parentWidth = parseInt(clone.attr('width'));
     $(txtElem).attr({
-      'font-family': 'arial',
-      'font-size': (parentWidth / 3),
-      'text-anchor': 'middle',
-      'font-weight': 'lighter',
-      'fill-opacity': 0,
       'x': (parseInt(clone.attr('x')) + parentWidth / 2),
       'y': 60,
+      'font-family': 'Open Sans',
+      'font-size': (parentWidth / 3),
+      'text-anchor': 'middle',
+      'font-weight': '300',
+      'fill-opacity': 0,
+      'style': 'transform: translateY(150%)'
     });
     var theText = barData[i].value;
     var theMSG = document.createTextNode(theText);
     txtElem.appendChild(theMSG);
     textElems.push(txtElem);
-    bargraphSvg.append(txtElem);
+    /* bargraphSvg.append(txtElem); */
+    $(txtElem).insertBefore(rects.eq(i));
 
   }
 
@@ -129,20 +136,22 @@ $(function () {
     var hoverElement = clones.eq(index);
 
     if (hoverElement.attr('fill-opacity') != 1) {
+      $(textElems).eq(index).attr({ 'style': 'transform: translateY(0%)' }); // text
       $(textElems).eq(index).attr({ 'fill-opacity': 1 }); // text
       hoverElement.attr({ 'fill-opacity': 1 }); // white background
       hoverElement.attr({ 'filter': 'url(#svgBarShadowFilter)' }); // shadow
       hoverElement.attr({ 'y': '0' }); // shadow
-      rects.eq(index).attr({'fill':'#28D8B2'}); // rectangle color
+      rects.eq(index).attr({'fill':'#745EAB'}); // rectangle color
 
       // make all other rectangles invisible again
       for (var i = 0; i < clones.length; i++) {
         if (i != index) {
+          $(textElems).eq(i).attr({ 'style': 'transform: translateY(100%)' }); // text
           $(textElems).eq(i).attr({ 'fill-opacity': 0 }); // text
           clones.eq(i).attr({ 'fill-opacity': 0 }); // white background
           clones.eq(i).attr({ 'y': bargraphParent.attr('height') }); // shadow
           rects.eq(i).attr({ 'filter': '' }); // shadow
-          rects.eq(i).attr({'fill':'#33C8AA'}); // rectangle color
+          rects.eq(i).attr({'fill':'#573F92'}); // rectangle color
         }
       }
     }

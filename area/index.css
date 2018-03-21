@@ -1,19 +1,14 @@
 body {
-  background-color: #fff;
-}
-
-#areagraph {
-  /* overflow:hidden; */
+  background: linear-gradient(#4F5D6A, #746E70);
+  height: 100vh;
 }
 
 #areagraph > svg {
   border: 1px solid #000;
-  background-color: #EEE;
+  background: linear-gradient(#746E70, #4F5D6A);
 
   transition: 0.3s all;
 }
-
-
 
 #areagraph > svg circle {
   /* display: none; */
@@ -28,8 +23,7 @@ body {
   transition: 0.5s all;
 }
 
-/* do the svg animation in js/jquery (eg calculate width)
-    https://css-tricks.com/svg-line-animation-works/ */
+/* do the svg animation in js/jquery (eg calculate width) https://css-tricks.com/svg-line-animation-works/ */
 path {
   stroke-dasharray: 1200;
   stroke-dashoffset: 1200;

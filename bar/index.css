@@ -1,6 +1,5 @@
 body {
-  /* background: linear-gradient(to bottom right, #706A6A, #4B5366) no-repeat; */
-  background-color: #615968;
+  background: linear-gradient(#4F5D6A, #746E70);
   height: 100vh;
 } 
 
@@ -10,32 +9,9 @@ body {
 
 #bargraph > svg {
   border: 1px solid #000;
-  /* overflow: visible !important; */
-  /* background-color: #EEE; */
-  background-color: #615968;
-  /* background: linear-gradient(to bottom right, #706A6A, #4B5366); */
-
-  /* transition: 0.3s all; */
+  background: linear-gradient(#746E70, #4F5D6A);
 }
 
-/* svg:hover {
-  -webkit-filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.5));
-  filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.5));
-} */
-
-/* #bargraph svg rect {
-  fill-opacity: 0.8 !important;
-  transition: 0.3s all;
+#bargraph svg rect, #bargraph svg text  {
+  transition: 0.5s all;
 }
-
-#bargraph svg rect:hover {
-  fill-opacity: 1 !important;
-} */
-
-#bargraph svg rect, #bargraph svg text {
-  transition: 0.5s all ease-in;
-}
-
-/* #bargraph svg g > rect {
-
-} */
