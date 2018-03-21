@@ -139,8 +139,8 @@ $(function () {
       $(textElems).eq(index).attr({ 'style': 'transform: translateY(0%)' }); // text
       $(textElems).eq(index).attr({ 'fill-opacity': 1 }); // text
       hoverElement.attr({ 'fill-opacity': 1 }); // white background
+      hoverElement.attr({ 'y': '0' }); // background move down
       hoverElement.attr({ 'filter': 'url(#svgBarShadowFilter)' }); // shadow
-      hoverElement.attr({ 'y': '0' }); // shadow
       rects.eq(index).attr({'fill':'#745EAB'}); // rectangle color
 
       // make all other rectangles invisible again
@@ -149,7 +149,7 @@ $(function () {
           $(textElems).eq(i).attr({ 'style': 'transform: translateY(100%)' }); // text
           $(textElems).eq(i).attr({ 'fill-opacity': 0 }); // text
           clones.eq(i).attr({ 'fill-opacity': 0 }); // white background
-          clones.eq(i).attr({ 'y': bargraphParent.attr('height') }); // shadow
+          clones.eq(i).attr({ 'y': bargraphParent.attr('height') }); // background move up
           rects.eq(i).attr({ 'filter': '' }); // shadow
           rects.eq(i).attr({'fill':'#573F92'}); // rectangle color
         }
